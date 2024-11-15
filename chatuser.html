@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Interface</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Chiều cao đầy đủ của viewport */
+        }
+        .dot {
+            width: 15px;
+            height: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #007bff;
+            animation: bounce 0.6s infinite alternate;
+        }
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Keyframes for the bounce animation */
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">
-            <h2>Chat Room</h2>
-        </div>
-        <div class="chat-box" id="chatBox">
-            <!-- Tin nhắn sẽ được hiển thị ở đây -->
-        </div>
-        <a href="/sigup.html">Login</a>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Nhập tin nhắn của bạn..." />
-            <button id="sendButton">Gửi</button>
-        </div>
+    <div class="loader">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Example: Hide loader after 3 seconds
+            setTimeout(function() {
+                $('.loader').fadeOut();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
