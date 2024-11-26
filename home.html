@@ -1,100 +1,115 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ứng dụng Chat</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Form and Table Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-                body {
-                    background-color: #f4f4f4;
-                }
-
-                #chatContainer {
-                    height: 65vh;
-                    max-height: 1200px;
-                    overflow-y: auto;
-                    border: 1px solid #ccc;
-                    background-color: #fff;
-                    padding: 10px;
-                    border-radius: 5px;
-                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-                }
-
-                .message {
-                    margin-bottom: 15px;
-                }
-
-                .sender {
-                    font-weight: bold;
-                    color: #007bff;
-                }
-
-                .receiver {
-
-                    font-weight: bold;
-                    color: #28a745;
-                }
-
-                .message-content {
-                    border-radius: 5px;
-                    padding: 10px;
-                    max-width: 75%;
-                    display: inline-block;
-                }
-
-                .sender .message-content {
-                    background-color: #e7f1ff;
-                    align-self: flex-end;
-                    float: right;
-                }
-
-                .receiver .message-content {
-                    background-color: #d4edda;
-                    align-self: flex-start;
-                }
-
-                .chat-input {
-                    display: flex;
-                    margin-top: 10px;
-                }
-                .card-img-container {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 16px;
-                }
-
-                .card-container {
-                    display: flex;
-                    gap: 1rem;
-                }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 0; /* Xóa padding của container */
+        }
+        .form-container {
+            width: 100%; /* Chiều rộng bằng 100% */
+            margin-bottom: 8px; /* Khoảng cách giữa các div */
+        }
+        .table-responsive {
+            width: 100%; /* Thẻ div chứa bảng chiếm 100% chiều rộng */
+        }
+        table {
+            width: 100%; /* Bảng chiếm 100% chiều rộng */
+        }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Ứng dụng Chat</h1>
-        <div id="chatContainer" class="d-flex flex-column">
-            <div id="loading"></div>
-        </div>
-        <div>
-            <div id="animation-dot" class="loader">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+
+<div class="container-fluid"> <!-- Sử dụng container-fluid để chiếm toàn bộ chiều rộng -->
+    <div class="form-container">
+        <div class="form-row align-items-center">
+            <!-- Button 1 -->
+            <div class="col-auto" style="margin-right:12px;">
+                <button type="button" class="btn btn-secondary mb-2 btn-custom">Đăng ký thông tin</button>
+            </div>
+            <label class="form-label">Tên người công tác: </label>
+            <!-- Input tìm kiếm -->
+            <div class="col-auto">
+                <input type="text" class="form-control mb-2" placeholder="Tên người công tác" />
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-primary mb-2 btn-custom">Tìm kiếm</button>
+            </div>
+            <label class="form-label" style="margin: 12px">Tên người đảm nhiệm:</label>
+            <!-- Spinner chọn -->
+            <div class="col-auto">
+                <select class="form-control mb-2">
+                    <option value="" disabled selected>Chọn tên người đảm nhiệm</option>
+                    <option value="1">Người A</option>
+                    <option value="2">Người B</option>
+                    <option value="3">Người C</option>
+                    <option value="4">Người D</option>
+                </select>
+            </div>
+            <!-- Button 2 -->
+            <div class="col-auto">
+                <button type="button" class="btn btn-success mb-2 btn-custom">Xuất dữ liệu</button>
             </div>
         </div>
-        <div class="v-image__image v-image__image--contain" style="background-image: url(&quot;https://cdn-static-v3.fpt.ai/upload/2f168ff49f873fc6c09442ac764ed6f9/a93423188b9ea6f08ed5b484f659624f.jpg&quot;); background-position: center top;"></div>
-        <!-- <form id="chatForm" class="chat-input">
-            <input type="text" name="Sender" value="User1" hidden />
-            <input type="text" name="Receiver" value="ChatBot" hidden />
-            <input type="text" class="form-control" id="contentInput" name="Content" placeholder="Nhập tin nhắn..." required />
-            <button type="submit" class="btn btn-primary ml-2 d-flex align-items-center" id="Send">
-                <span class="mr-2">Gửi</span>
-                <img src="~/lib/send.png" alt="Send" style="width: 30px; height: 24px;" />
-            </button>
-        </form> -->
     </div>
+    <div class="form-container">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Chi tiết</th>
+                        <th>Xe chiều đi</th>
+                        <th>Suất ăn</th>
+                        <th>Mã số quản lý</th>
+                        <th>Công ty</th>
+                        <th>Tên người công tác</th>
+                        <th>Tình trạng</th>
+                        <th colspan="4">Thông tin đến</th>
+                        <th colspan="4">Thông tin về</th>
+                        <th colspan="2">Thông tin khách sạn</th>
+                        <th>PIC tại BIVN</th>
+                        <th>Điện thoại người công tác</th>
+                        <th>Địa chỉ người công tác</th>
+                        <th>Ngày cập nhật</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Ngày đến</th>
+                        <th>Chuyến đến</th>
+                        <th>Thời gian</th>
+                        <th>Sử dụng xe</th>
+                        <th>Ngày về</th>
+                        <th>Chuyến về</th>
+                        <th>Thời gian</th>
+                        <th>Sử dụng xe</th>
+                        <th>Khách sạn 1</th>
+                        <th>Khách sạn 2</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu sẽ được thêm vào đây -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
-

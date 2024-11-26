@@ -1,0 +1,231 @@
+@{
+    ViewData["Title"] = "Đăng ký người công tác";
+}
+<h3>Đăng ký thông tin người công tác</h3>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://hroy.eu/bootstrap/docs/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: antiquewhite;
+            /* #f8f9fa */
+            font-size: 14px;
+/*             width: 100%; */
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .container {
+            padding: 0; /* Xóa padding của container */
+        }
+        .btn-custom {
+            min-width: 120px;
+        }
+
+        .form-label {
+            margin-right: 10px; 
+        }
+        .form-control {
+            width: auto; 
+            min-width: 150px; 
+        }
+
+        .table-responsive {
+            overflow-x: auto; /* Cho phép cuộn ngang cho bảng */
+            width: 100%;
+        }
+
+        table {
+            width: 100%; /* Đặt chiều rộng của bảng */
+            border-collapse: collapse; /* Hợp nhất các đường viền */
+            margin-bottom: 20px; /* Khoảng cách giữa các bảng */
+        }
+
+        th, td {
+            padding: 8px; /* Thêm khoảng cách cho các ô */
+            text-align: center; /* Căn giữa cho các ô tiêu đề */
+            border: 1px solid #ddd; /* Thêm đường viền cho các ô */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+            white-space: nowrap; /* Ngăn chặn xuống dòng trong tiêu đề */
+        }
+
+        td {
+            word-wrap: break-word; /* Cho phép xuống dòng trong ô dữ liệu */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="form-container">
+            <div class="form-row align-items-center">
+                <!-- Button 1 -->
+                <div class="col-auto" style="margin-right:12px;">
+                    <button type="button" class="btn btn-secondary mb-2 btn-custom">Đăng ký thông tin</button>
+                </div>
+                <label class="form-label">Tên người công tác: </label>
+                <!-- Input tìm kiếm -->
+                <div class="col-auto">
+                    <input type="text" class="form-control mb-2" placeholder="Tên người công tác" />
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary mb-2 btn-custom">Tìm kiếm</button>
+                </div>
+                <label class="form-label" style="margin: 12px">Tên người đảm nhiệm:</label>
+                <!-- Spinner chọn -->
+                <div class="col-auto">
+                    <select class="form-control mb-2">
+                        <option value="" disabled selected>Chọn tên người đảm nhiệm</option>
+                        <option value="1">Người A</option>
+                        <option value="2">Người B</option>
+                        <option value="3">Người C</option>
+                        <option value="4">Người D</option>
+                    </select>
+                </div>
+                <!-- Button 2 -->
+                <div class="col-auto">
+                    <button type="button" class="btn btn-success mb-2 btn-custom">Xuất dữ liệu</button>
+                </div>
+            </div>
+        </div>
+        <div class ="form-container" style="margin-top: 8px;">
+            <div class="form-container">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chi tiết</th>
+                                <th>Xe chiều đi</th>
+                                <th>Suất ăn</th>
+                                <th>Mã số quản lý</th>
+                                <th>Công ty</th>
+                                <th>Tên người công tác</th>
+                                <th>Tình trạng</th>
+                                <th colspan="4">Thông tin đến</th>
+                                <th colspan="4">Thông tin về</th>
+                                <th colspan="2">Thông tin khách sạn</th>
+                                <th>PIC tại BIVN</th>
+                                <th>Điện thoại người công tác</th>
+                                <th>Địa chỉ người công tác</th>
+                                <th>Ngày cập nhật</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th>Ngày đến</th>
+                                <th>Chuyến đến</th>
+                                <th>Thời gian</th>
+                                <th>Sử dụng xe</th>
+                                <th>Ngày về</th>
+                                <th>Chuyến về</th>
+                                <th>Thời gian</th>
+                                <th>Sử dụng xe</th>
+                                <th>Khách sạn 1</th>
+                                <th>Khách sạn 2</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><button class="btn btn-primary">Chi tiết</button></td>
+                                <td>Xe 1</td>
+                                <td>Suất ăn 1</td>
+                                <td>001</td>
+                                <td>Công ty A</td>
+                                <td>Maria Anders</td>
+                                <td>Hoàn thành</td>
+                                <td>01/01/2024</td>
+                                <td>Chuyến đến 1</td>
+                                <td>10:00 AM</td>
+                                <td>Có</td>
+                                <td>05/01/2024</td>
+                                <td>Chuyến về 1</td>
+                                <td>04:00 PM</td>
+                                <td>Có</td>
+                                <td>Khách sạn A</td>
+                                <td>Khách sạn B</td>
+                                <td>John Doe</td>
+                                <td>0123456789</td>
+                                <td>Địa chỉ A</td>
+                                <td>01/01/2024</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn btn-primary">Chi tiết</button></td>
+                                <td>Xe 2</td>
+                                <td>Suất ăn 2</td>
+                                <td>002</td>
+                                <td>Công ty B</td>
+                                <td>Francisco Chang</td>
+                                <td>Đang chờ</td>
+                                <td>02/01/2024</td>
+                                <td>Chuyến đến 2</td>
+                                <td>11:00 AM</td>
+                                <td>Có</td>
+                                <td>06/01/2024</td>
+                                <td>Chuyến về 2</td>
+                                <td>05:00 PM</td>
+                                <td>Có</td>
+                                <td>Khách sạn C</td>
+                                <td>Khách sạn D</td>
+                                <td>Jane Doe</td>
+                                <td>9876543210</td>
+                                <td>Địa chỉ B</td>
+                                <td>02/01/2024</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn btn-primary">Chi tiết</button></td>
+                                <td>Xe 2</td>
+                                <td>Suất ăn 2</td>
+                                <td>003</td>
+                                <td>Công ty B</td>
+                                <td>Francisco Chang</td>
+                                <td>Đang chờ</td>
+                                <td>02/01/2024</td>
+                                <td>Chuyến đến 2</td>
+                                <td>11:00 AM</td>
+                                <td>Có</td>
+                                <td>06/01/2024</td>
+                                <td>Chuyến về 2</td>
+                                <td>05:00 PM</td>
+                                <td>Có</td>
+                                <td>Khách sạn C</td>
+                                <td>Khách sạn D</td>
+                                <td>Jane Doe</td>
+                                <td>9876543210</td>
+                                <td>Địa chỉ B</td>
+                                <td>02/01/2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
